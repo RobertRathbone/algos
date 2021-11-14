@@ -1,0 +1,55 @@
+//A coin was tossed numerous times. You need to find the longest streak of tosses resulting  and the longest streak of tosses resulting in .
+
+//Formally, given the results of  tosses of a coin, find the maximum number of consecutive  and the maximum number of consecutive .
+
+//Consider the following example: a coin was tossed  times and the results were . Therefore, the longest  streak was  and the longest  streak was .
+
+//Complete the function getMaxStreaks which takes an array of strings toss and returns an array of two integers denoting the maximum streaks of  and  respectively.
+
+//Input Format
+
+//In the first line, there is a single integer  denoting the number of tosses.
+
+//Then,  lines follow. The  of them contains a string  denoting the result of the  toss of the coin.
+
+//Constraints
+
+//In a single line, print two space-separated integers denoting the maximum streak of Heads and the maximum streak of Tails respectively.
+
+function getMaxStreaks(toss) {
+    // Return an array of two integers containing the maximum streak of heads and tails respectively
+    var tailsStreak = 0;
+    var headsStreak = 0;
+    var lastFlip = "";
+    var maxTail = 0;
+    var maxHead = 0;
+    for (let i = 0; i < toss.length; i++){
+        if (toss[i] == "Tails" && lastFlip == "Heads"){
+            tailsStreak = 0;
+        }
+        if (toss[i] == "Tails"){
+            lastFlip = "Tails";
+            console.log ("Tails", i);
+        }
+        if (toss[i] == "Tails" && lastFlip == "Tails"){
+            tailsStreak ++;
+            if (tailsStreak >  maxTail){
+                maxTail = tailsStreak;
+            }
+        }
+        if (toss[i] == "Heads" && lastFlip == "Tails"){
+            headsStreak = 0;
+        }
+        if (toss[i] == "Heads"){
+            lastFlip = "Heads";
+            console.log ("Heads", i);
+        }
+        if (toss[i] == "Heads" && lastFlip == "Heads"){
+            headsStreak ++;
+            if (headsStreak > maxHead){
+                maxHead = headsStreak;
+            }
+        }
+    }
+    return [maxHead, maxTail]
+}
