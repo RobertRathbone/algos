@@ -1,0 +1,39 @@
+//There is a string, s, of lowercase English letters that is repeated infinitely many times. Given an integer,n , find and print the number of letter a's 
+//in the first  letters of the infinite string.
+
+//Example
+//s ='abcac'
+//n = 10
+
+//The substring we consider is abcacabcacac, the first 10 characters of the infinite string. There are 4 occurrences of a in the substring.
+
+//Function Description
+
+//Complete the repeatedString function in the editor below.
+
+//repeatedString has the following parameter(s):
+
+//s: a string to repeat
+//n: the number of characters to consider
+//Returns
+
+//int: the frequency of a in the substring
+
+function repeatedString(s, n) {
+    // Write your code here
+    var aCount =0;
+    var totalA = 0;
+    var extraA = 0;
+    console.log(s,n, extraA)
+    for (let i = 0; i<s.length; i++){
+        if (s[i] == 'a'){
+            aCount ++;
+            if (i < n%s.length){
+                extraA++
+            }
+        }
+    }
+    totalA = aCount*(Math.floor(n/s.length)) + extraA;
+    return totalA
+
+}
