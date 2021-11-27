@@ -1,0 +1,43 @@
+//Given an array of integers, determine the minimum number of elements to delete to leave only elements of equal value.
+
+//Example
+//arr = [1,2,2,3]
+
+//Delete the 2 elements 1 and 3 leaving arr = [2,2]. If both twos plus either the 1 or the 3 are deleted, it takes 3 deletions to leave either 1 or 3. 
+//The minimum number of deletions is .
+
+//Function Description
+
+//Complete the equalizeArray function in the editor below.
+
+//equalizeArray has the following parameter(s):
+
+//int arr[n]: an array of integers
+//Returns
+
+//int: the minimum number of deletions required
+//Input Format
+
+//The first line contains an integer , the number of elements in .
+//The next line contains  space-separated integers .
+
+
+function equalizeArray(arr) {
+    // Write your code here
+      const freqTable = {};
+
+  for (let i = 0; i <= arr.length; i++) {
+    const str = arr[i];
+
+    if (freqTable.hasOwnProperty(str) === false) {
+      // first occurrence found
+      freqTable[str] = 1;
+    } else {
+      freqTable[str]++;
+    }
+  }
+  let returnArray = Object.values(freqTable);
+  let max = Math.max(...returnArray);
+  console.log ("max", max, "arr.length", arr.length)
+    return arr.length - max
+}
