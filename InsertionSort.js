@@ -50,6 +50,36 @@ const insertionSortDestructuredSwap = (arr) => {
     return arr;
 }
 
+// This is the brute force approach from Hackerrank that demonstrates the number inserted moving left
+
+//function insertionSort1(n, arr) {
+
+//     var insertNumber = arr[arr.length-1];
+//     arr.pop();
+//     for (let i = arr.length-1; i>=0; i--){
+        
+//         // console.log(arr[i], arr[arr.length-1])
+//         if (arr[i] <= insertNumber){
+//             arr.splice(i+1, 1, insertNumber );
+//             console.log( arr.join(" "));
+//             break;
+//         }
+//         else {
+//             // arr[i] = arr[i];
+//             arr[i+1] = arr[i];
+//             if (i ==0){
+//                 arr[i+1] = arr[i];
+                
+//                 console.log(arr.join(" "));
+//                 arr.splice(i, 1, insertNumber );
+//             }
+            
+//         }
+//         console.log(arr.join(" "))
+//     }
+
+// }
+
 //  - efficient for small data sets
 //  - constant memory / space O(1)
 
