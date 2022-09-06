@@ -1,0 +1,35 @@
+const words =
+['abacus', 'abased', 'abasia', 'abasic', 'abated', 'abates', 'abatic', 'abatis', 'abator', 'abbacy', 'abbess', 'abbeys', 'abbots', 'abduce', 'abduct', 'abelia', 'abhors', 'abided', 'abides', 'abient', 'abject', 'abjure' ];
+const words2 =['abacus', 'abased', 'abasia', 'achene', 'aching', 'achira', 'acidic', 'acidly', 'acinar', 'acinic', 'acinus', 'ack-ack', 'acorea', 'acorns' ]
+
+var wordList6 = [];
+let wordList5 = [];
+let wordList4 = [];
+let newWords = [];
+console.log("yo")
+console.log(words[1])
+for (let i=0; i<words.length; i++){
+    if (words[i].length == 6){
+        wordList6.push(words[i])
+    }
+    if (words[i].length == 5){
+        wordList5 = wordList5 + words[i]
+    }
+    if (words[i].length == 4){
+        wordList4 = wordList4 + words[i]
+    }
+}
+console.log("hello");
+// console.log(wordList6)
+
+for (let i = 0; i<words2.length; i++){
+        if (!words2.includes(wordList6[i])){
+            newWords.push(wordList6[i])
+        }   
+    }
+const finalWords = words.concat(newWords).sort()
+
+console.log(wordList6)
+// console.log('done');
+// console.log (newWords);
+console.log(finalWords)
